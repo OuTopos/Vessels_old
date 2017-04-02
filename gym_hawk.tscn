@@ -1,0 +1,154 @@
+[gd_scene load_steps=7 format=1]
+
+[ext_resource path="res://img/placeholder_texture.png" type="Texture" id=1]
+[ext_resource path="res://debug_menu.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/roles/body_chef.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/roles/body_ghost.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/roles/body_captain.tscn" type="PackedScene" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[node name="gym_hawk" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+
+transform/pos = Vector2( 640.286, 33.3111 )
+transform/scale = Vector2( 4.96594, 0.247498 )
+texture = ExtResource( 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite"]
+
+transform/pos = Vector2( -131.139, -128.124 )
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 12.9326, 0, 0, 12.8901, 131.384, 127.945 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = { "_edit_lock_":true }
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
+
+transform/pos = Vector2( 131.384, 127.945 )
+transform/scale = Vector2( 12.9326, 12.8901 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+__meta__ = { "_edit_lock_":true }
+
+[node name="Sprite2" type="Sprite" parent="."]
+
+transform/pos = Vector2( 58.4529, 536.009 )
+transform/scale = Vector2( 0.43214, 4.1866 )
+texture = ExtResource( 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2"]
+
+transform/pos = Vector2( -131.139, -128.124 )
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 12.9326, 0, 0, 12.8901, 131.384, 127.945 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = { "_edit_lock_":true }
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2/StaticBody2D"]
+
+transform/pos = Vector2( 131.384, 127.945 )
+transform/scale = Vector2( 12.9326, 12.8901 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+__meta__ = { "_edit_lock_":true }
+
+[node name="Sprite1" type="Sprite" parent="."]
+
+transform/pos = Vector2( 1251.54, 537.554 )
+transform/scale = Vector2( 0.29654, 4.20986 )
+texture = ExtResource( 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite1"]
+
+transform/pos = Vector2( -131.139, -128.124 )
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 12.9326, 0, 0, 12.8901, 131.384, 127.945 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = { "_edit_lock_":true }
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite1/StaticBody2D"]
+
+transform/pos = Vector2( 131.384, 127.945 )
+transform/scale = Vector2( 12.9326, 12.8901 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+__meta__ = { "_edit_lock_":true }
+
+[node name="Sprite3" type="Sprite" parent="."]
+
+transform/pos = Vector2( 648.119, 1037.23 )
+transform/scale = Vector2( 5.01073, 0.306178 )
+texture = ExtResource( 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite3"]
+
+transform/pos = Vector2( -131.139, -128.124 )
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 12.9326, 0, 0, 12.8901, 131.384, 127.945 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = { "_edit_lock_":true }
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite3/StaticBody2D"]
+
+transform/pos = Vector2( 131.384, 127.945 )
+transform/scale = Vector2( 12.9326, 12.8901 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+__meta__ = { "_edit_lock_":true }
+
+[node name="debug_menu" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 1771.29, 20.7017 )
+
+[node name="Node" type="Node" parent="."]
+
+[node name="body_chef" parent="Node" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 645.142, 530.584 )
+
+[node name="body_ghost" parent="Node" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 581.833, 337.644 )
+
+[node name="body_captain" parent="Node" instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 405.475, 414.519 )
+
+

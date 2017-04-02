@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=1]
+
+[ext_resource path="res://TileSets/Spaceship.tres" type="TileSet" id=1]
+[ext_resource path="res://Characters/Captain.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Characters/Chef.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Characters/Player.tscn" type="PackedScene" id=4]
+
+[node name="Level A" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+
+mode = 0
+tile_set = ExtResource( 1 )
+cell/size = Vector2( 64, 64 )
+cell/quadrant_size = 16
+cell/custom_transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+cell/half_offset = 2
+cell/tile_origin = 0
+cell/y_sort = false
+collision/use_kinematic = false
+collision/friction = 1.0
+collision/bounce = 0.0
+collision/layers = 1
+collision/mask = 1
+occluder/light_mask = 1
+tile_data = IntArray( -65536, 0, 0, 0, 1, 0, 2, 0, 3, 0, 4, 0, 5, 0, 11, 0, 65536, 0, 65538, 0, 65541, 0, 65547, 0, 131072, 0, 131073, 0, 131074, 0, 131076, 0, 131077, 0, 131078, 0, 131079, 0, 131080, 0, 131081, 0, 131082, 0, 131083, 0, 196608, 0, 196613, 0, 262144, 0, 262145, 0, 262148, 0, 262149, 0, 262150, 0, 262151, 0, 262152, 0, 262153, 0, 262154, 0, 262155, 0, 327680, 0, 327682, 0, 327685, 0, 327691, 0, 393216, 0, 393217, 0, 393218, 0, 393219, 0, 393220, 0, 393221, 0, 393222, 0, 393223, 0, 393224, 0, 393225, 0, 393226, 0, 393227, 0, 393228, 0, 458754, 0, 458756, 0, 458758, 0, 458760, 0, 458762, 0, 458764, 0, 524290, 0, 524293, 0, 524295, 0, 524297, 0, 524300, 0, 589826, 0, 589827, 0, 589828, 0, 589829, 0, 589830, 0, 589831, 0, 589832, 0, 589833, 0, 589834, 0, 589835, 0, 589836, 0, 655362, 0, 720898, 0 )
+
+[node name="Captain" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 288, 288 )
+
+[node name="Chef" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 32, 416 )
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 288, 160 )
+
+
