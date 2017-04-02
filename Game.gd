@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 
 # class member variables go here, for example:
 # var a = 2
@@ -9,7 +9,7 @@ var scene_node = null
 
 func _ready():
 	#get_tree().change_scene("res://gym_hawk.tscn")
-	#change_scene("res://gym_hawk.tscn")
+	change_scene("res://Levels/Level A.tscn")
 	print("game.gd loaded")
 	set_process(true)
 		

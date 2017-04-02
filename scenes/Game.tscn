@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=1]
+
+[sub_resource type="GDScript" id=1]
+
+script/source = "extends Node\n\n# class member variables go here, for example:\n# var a = 2\n# var b = \"textvar\"\n\n\nvar scene_node = null\n\nfunc _ready():\n\t#get_tree().change_scene(\"res://gym_hawk.tscn\")\n\tchange_scene(\"res://Levels/Level A.tscn\")\n\tprint(\"game.gd loaded\")\n\tset_process(true)\n\t\t\nfunc change_scene(scene_name):\n\tif scene_node:\n\t\tscene_node.free()\n\t\t\n\tvar scene = load(scene_name)\n\tvar scene_node = scene.instance()\n\t\t\n\tadd_child(scene_node)\n\t\n\t\t\nfunc _process(dt):\n\tpass\n\t\n\t\n\t\n\t\n\n"
+
+[node name="Game" type="Node"]
+
+script/script = SubResource( 1 )
+
+
